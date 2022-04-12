@@ -18,3 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/image-upload',[ImageUploadController::class,'image_upload']);
+Route::get('/toast',function(){
+    return "hello";
+});

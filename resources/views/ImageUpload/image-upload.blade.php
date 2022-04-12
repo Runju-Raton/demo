@@ -10,7 +10,8 @@
                         <input id="name" type="text" class="form-control">
                     </div>
                     <div class="form-group">
-                        <select name="" id="country" class="form-control">
+                        <label for="country">Select Country </label>
+                        <select name="" id="country" class="form-control" placeholder="select country">
                             <option value="">A</option>
                             <option value="">B</option>
                             <option value="">C</option>
@@ -18,6 +19,7 @@
                         </select>
                     </div>
                 </form>
+                <button class="btn btn-primary" onclick="t()">click me</button>
             </div>
         </div>
     </div>
@@ -25,10 +27,25 @@
 
 @push('bottom_js')
     <script>
-        $( document ).ready(function() {
+        $(document).ready(function(){
             $('#country').select2();
-            console.log( "ready!" );
         });
+        function t(){
+            $.ajax({
+                type: 'get',
+                url: "{{ url('toast')}}",
+                data: '',
+                success: function (response) {
+                    toastr.info('Are you the 6 fingered man?');
+                },
+                error: function (xhr) {
+                    alert("Something Wnt Wrong");
+                    //Do Something to handle error
+                }
+            });
+        
+            
+        }
     </script>
 @endpush
 
