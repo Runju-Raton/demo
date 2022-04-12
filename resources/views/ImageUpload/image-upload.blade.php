@@ -1,16 +1,36 @@
-<form action="">
-    <input type="file"> <br> <br>
-    <button onclick="imageUpload(e)">save</button>
-</form>
+@extends('main')
 
-    
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <form action="">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="country" class="form-control">
+                            <option value="">A</option>
+                            <option value="">B</option>
+                            <option value="">C</option>
+                            <option value="">D</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@push('bottom_js')
     <script>
-        function imageUpload(e){
-            let file = e.target
-            console.log(file)
-        }
+        $( document ).ready(function() {
+            $('#country').select2();
+            console.log( "ready!" );
+        });
     </script>
-
+@endpush
 
 
 
