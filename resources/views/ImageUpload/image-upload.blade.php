@@ -18,6 +18,17 @@
                             <option value="">D</option>
                         </select>
                     </div>
+                     <div class="form-group">
+                         <label for="image">Image</label>
+                         <div class="row">
+                             <div class="col-md-4">
+                                <input type="file">
+                             </div>
+                             <div class="col-md-8">
+                                <img src="{{asset('assets/images/logo_default.png')}}" alt="" style="width: 75px; height: 75px;">
+                             </div>
+                         </div>
+                     </div>
                 </form>
                 <button class="btn btn-primary" onclick="t()">click me</button>
             </div>
